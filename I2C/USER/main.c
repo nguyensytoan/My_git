@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 #define BH1750_Addr_L 0x46
+//#define BH1750_Addr_L 0x5C
 #define BH1750_ON 0x01
 #define BH1750_RESET 0x07
 #define BH1750_CONT_H_RES_MODE 0x10 // cdo do lien tuc do phan giai cao
@@ -46,7 +47,7 @@ void Gpio_Config() {
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE); // 
     
     // C?u h?nh I2C2 (PB10-SCL2, PB11-SDA2)
-    gpio_struct.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
+    gpio_struct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
     gpio_struct.GPIO_Mode = GPIO_Mode_AF_OD;
     gpio_struct.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOB, &gpio_struct);
